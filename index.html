@@ -17,7 +17,7 @@
         <img src="assets/images/avartar_birthday.png" alt="Logo" width="150"/>
 
         <p class="view">
-          <a href="mailto:renjiz2@cs.washington.edu">Email</a><i> / </i> <a href="resume/">Resume</a><i> / </i><a href="https://github.com/jason-31">GitHub</a><i> / </i><a href="https://scholar.google.com/citations?user=uFWap_YAAAAJ">Google Scholar</a><i> / </i><a href="https://www.linkedin.com/in/renjiz2/">LinkedIn</a><i> / </i><a href="assets/images/wechat.jpg">WeChat</a>
+          <a href="mailto:renjiz2@cs.washington.edu">Email</a><i> / </i> <a href="resume/">Resume</a><i> / </i><a href="https://github.com/jason-31">GitHub</a><i> / </i><a href="https://scholar.google.com/citations?user=uFWap_YAAAAJ">Google Scholar</a><i> / </i><a href="https://www.linkedin.com/in/renjiz2/">LinkedIn</a><i> / </i><a href="assets/images/wechat.jpg" id="wechat-link">WeChat</a>
         </p>
       </header>
 
@@ -94,6 +94,24 @@
         <p><small>Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
+
+    <div class="modal" id="wechat-modal">
+      <img src="assets/images/wechat.jpg" alt="WeChat QR code">
+    </div>
+
     <script src="javascripts/scale.fix.js"></script>
+    <script>
+      var wechatModal = document.getElementById('wechat-modal');
+      document.getElementById('wechat-link').addEventListener('click', function (e) {
+        e.preventDefault();
+        wechatModal.classList.add('open');
+      });
+      wechatModal.addEventListener('click', function () {
+        wechatModal.classList.remove('open');
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') wechatModal.classList.remove('open');
+      });
+    </script>
   </body>
 </html>
